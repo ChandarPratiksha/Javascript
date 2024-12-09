@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style>
+        /* Center form on the page with extra top margin */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items at the top but allow movement */
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        /* Form styling */
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            margin-top: 50px; /* Add top margin to push form down */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        /* Center the submit button */
+        td[colspan="2"] {
+            text-align: center;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="register.php" method="post">
+        <h2>Student Registration Form</h2>
+        <table>
+            <tr>
+                <td>Full Name:</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>Roll No:</td>
+                <td><input type="text" name="rollno" required></td>
+            </tr>
+            <tr>
+                <td>Class:</td>
+                <td><input type="text" name="class" required></td>
+            </tr>
+            <tr>
+                <td>Department:</td>
+                <td><input type="text" name="dept" required></td>
+            </tr>
+            <tr>
+                <td>Gender:</td>
+                <td>
+                    <input type="radio" name="gender" value="male" required> Male
+                    <input type="radio" name="gender" value="female" required> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td>Phone:</td>
+                <td><input type="tel" name="phone" pattern="[0-9]{10}" required></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><textarea name="address" rows="3" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Taluka:</td>
+                <td>
+                    <select name="taluka" required>
+                        <option value="taluka1">Taluka 1</option>
+                        <option value="taluka2">Taluka 2</option>
+                        <option value="taluka3">Taluka 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>District:</td>
+                <td>
+                    <select name="district" required>
+                        <option value="district1">District 1</option>
+                        <option value="district2">District 2</option>
+                        <option value="district3">District 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Skills:</td>
+                <td>
+                    <input type="checkbox" name="skills" value="coding"> Coding
+                    <input type="checkbox" name="skills" value="sports"> Sports
+                    <input type="checkbox" name="skills" value="art"> Art
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Register">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>
